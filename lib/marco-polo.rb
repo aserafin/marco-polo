@@ -18,7 +18,7 @@ if defined? Pry
       rails_env = Rails.env.downcase
 
       # shorten some common long environment names
-      rails_env = "\001\e[1m\e[31m\002dev\001\e[0m\00" if rails_env == "development"
+      rails_env = "\001\e[1m\e[31m\002dev\001\e[0m\002" if rails_env == "development"
       rails_env = "prod" if rails_env == "production"
 
       "#{current_app}(#{rails_env})> "
