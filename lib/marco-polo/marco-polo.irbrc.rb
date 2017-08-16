@@ -8,7 +8,7 @@ if rails_env
   current_app = ENV["MARCO_POLO_APP_NAME"] || Rails.application.class.parent_name.underscore.gsub("_", "-")
 
   # shorten some common long environment names
-  rails_env = "dev" if rails_env == "development"
+  rails_env = "\001\e[1m\e[31m\002dev\001\e[0m\00" if rails_env == "development"
   rails_env = "prod" if rails_env == "production"
 
   IRB.conf[:PROMPT][:RAILS_ENV] = {
